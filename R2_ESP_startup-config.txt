@@ -1,0 +1,135 @@
+!
+version 15.1
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+no service password-encryption
+!
+hostname Router
+!
+!
+!
+!
+!
+!
+!
+!
+no ip cef
+no ipv6 cef
+!
+!
+!
+!
+license udi pid CISCO2811/K9 sn FTX10174O0D-
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+spanning-tree mode pvst
+!
+!
+!
+!
+!
+!
+interface FastEthernet0/0
+ no ip address
+ duplex auto
+ speed auto
+!
+interface FastEthernet0/0.12
+ encapsulation dot1Q 12
+ ip address 10.2.0.1 255.255.255.0
+!
+interface FastEthernet0/0.23
+ encapsulation dot1Q 23
+ ip address 10.2.1.1 255.255.255.0
+!
+interface FastEthernet0/0.34
+ encapsulation dot1Q 34
+ ip address 10.2.2.1 255.255.255.0
+!
+interface FastEthernet0/0.45
+ encapsulation dot1Q 45
+ ip address 10.2.3.1 255.255.255.0
+!
+interface FastEthernet0/0.56
+ encapsulation dot1Q 56
+ ip address 10.2.4.1 255.255.255.0
+!
+interface FastEthernet0/1
+ no ip address
+ duplex auto
+ speed auto
+ shutdown
+!
+interface Serial1/0
+ no ip address
+ clock rate 2000000
+ shutdown
+!
+interface Serial1/1
+ no ip address
+ clock rate 2000000
+ shutdown
+!
+interface Serial1/2
+ ip address 200.192.2.2 255.255.255.252
+ clock rate 2000000
+!
+interface Serial1/3
+ no ip address
+ clock rate 2000000
+ shutdown
+!
+interface Serial1/4
+ no ip address
+ clock rate 2000000
+ shutdown
+!
+interface Serial1/5
+ no ip address
+ clock rate 2000000
+ shutdown
+!
+interface Serial1/6
+ no ip address
+ clock rate 2000000
+ shutdown
+!
+interface Serial1/7
+ no ip address
+ clock rate 2000000
+ shutdown
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+ip classless
+!
+ip flow-export version 9
+!
+!
+!
+!
+!
+!
+!
+line con 0
+!
+line aux 0
+!
+line vty 0 4
+ login
+!
+!
+!
+end
+

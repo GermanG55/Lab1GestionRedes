@@ -1,0 +1,140 @@
+!
+version 15.1
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+no service password-encryption
+!
+hostname Router
+!
+!
+!
+!
+!
+!
+!
+!
+no ip cef
+no ipv6 cef
+!
+!
+!
+!
+license udi pid CISCO2811/K9 sn FTX1017UIQ8-
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+spanning-tree mode pvst
+!
+!
+!
+!
+!
+!
+interface FastEthernet0/0
+ ip address 161.130.3.1 255.255.255.248
+ duplex auto
+ speed auto
+!
+interface FastEthernet0/1
+ no ip address
+ duplex auto
+ speed auto
+!
+interface FastEthernet0/1.11
+ encapsulation dot1Q 11
+ ip address 172.18.0.1 255.255.255.0
+ ip helper-address 172.18.0.2
+ ip helper-address 172.18.2.2
+!
+interface FastEthernet0/1.22
+ encapsulation dot1Q 22
+ ip address 172.18.1.1 255.255.255.0
+ ip helper-address 172.18.1.2
+!
+interface FastEthernet0/1.33
+ encapsulation dot1Q 33
+ ip address 172.18.2.1 255.255.255.0
+ ip helper-address 172.18.2.2
+!
+interface FastEthernet0/1.44
+ encapsulation dot1Q 44
+ ip address 172.18.3.1 255.255.255.0
+ ip helper-address 172.18.3.2
+!
+interface FastEthernet0/1.55
+ encapsulation dot1Q 55
+ ip address 172.18.4.1 255.255.255.0
+ ip helper-address 172.18.4.2
+!
+interface Serial1/0
+ no ip address
+ clock rate 2000000
+!
+interface Serial1/1
+ no ip address
+ clock rate 2000000
+ shutdown
+!
+interface Serial1/2
+ ip address 161.130.3.9 255.255.255.248
+!
+interface Serial1/3
+ no ip address
+ clock rate 2000000
+ shutdown
+!
+interface Serial1/4
+ no ip address
+ clock rate 2000000
+ shutdown
+!
+interface Serial1/5
+ no ip address
+ clock rate 2000000
+ shutdown
+!
+interface Serial1/6
+ no ip address
+ clock rate 2000000
+ shutdown
+!
+interface Serial1/7
+ no ip address
+ clock rate 2000000
+ shutdown
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+router rip
+!
+ip classless
+!
+ip flow-export version 9
+!
+!
+!
+!
+!
+!
+!
+line con 0
+!
+line aux 0
+!
+line vty 0 4
+ login
+!
+!
+!
+end
+
